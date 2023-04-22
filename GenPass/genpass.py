@@ -22,30 +22,22 @@ level_pass = input('Укажите сложность пароля (легкая
 count_pass = int(input("Укажите колличество паролей: "))
 
 
-# def gen_pass():
-#     password = ""
-#     for i in range(len_pass):
-#         symbol = random.choice(simple)
-#         password += symbol
+def gen_pass(level):
+    data = ""
+    for i in range(len_pass):
+        symbol = random.choice(level)
+        data += str(symbol)
+    return data
 
 
 if level_pass == "легкая":
-    password = ""
-    for i in range(len_pass):
-        symbol = random.choice(simple)
-        password += symbol
+    password = gen_pass(level=simple)
 
 elif level_pass == "средняя":
-    password = ""
-    for i in range(len_pass):
-        symbol = random.choice(medium)
-        password += str(symbol)
+    password = gen_pass(level=medium)
 
 elif level_pass == "сложная":
-    password = ""
-    for i in range(len_pass):
-        symbol = random.choice(hard)
-        password += str(symbol)
+    password = gen_pass(level=hard)
 
 
 
